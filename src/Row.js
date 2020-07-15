@@ -3,6 +3,10 @@ import React, { useEffect, useState } from 'react'
 // API Axios
 import axios from './axios';
 
+// For Images
+const base_url = 'https://image.tmdb.org/t/p/original/';
+
+
 export default function Row({ title, fetchUrl }) {
     
     const [movies, setMovies] = useState([]);
@@ -19,10 +23,26 @@ export default function Row({ title, fetchUrl }) {
     }, [fetchUrl]);
     // fetchUrl in [] this bcz it is a dependency
 
+
+    console.log(movies);
+
     return (
-        <div>
+        <div className="row">
             <h2>{ title }</h2>
-            {/* container */}
+
+            <div className="row_posters">
+                {
+                    movies.map(movie => {
+                        return(
+                            <img 
+                                className="row_poster"
+                                src={ `${base_url}${movie.poster_path}` } 
+                                alt={ movie.name }     
+                            />
+                        )
+                    })
+                }
+            </div>
         </div>
     )
 }
