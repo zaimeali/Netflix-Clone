@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 // Component
+import Navbar from './Navbar';
 import Banner from './Banner';
 import Row from './Row';
 
@@ -11,6 +12,7 @@ import requests from './requests';
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <Banner 
         fetchUrl={ requests.fetchNetflixOriginals }
       />
