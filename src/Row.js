@@ -27,7 +27,7 @@ export default function Row({ title, fetchUrl, isLargeRow }) {
     // fetchUrl in [] this bcz it is a dependency
 
 
-    console.log(movies);
+    // console.log(movies);
 
     return (
         <div className="row">
